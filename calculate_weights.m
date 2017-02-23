@@ -20,7 +20,7 @@ EL_triggers=zeros(10000,1);
 % A positive value corresponds to pre-post
 % A negative value corresponds to pose-pre
 % A larger magnitude corresponds to a more closely spaced pairing
-EL_triggers(inds_el)=1;
+EL_triggers(2)=1;
 
 for ii = 2:10000
     EL(ii,:)=EL(ii-1,:)+0.001*EL_dt(0,EL(ii-1,:),EL_triggers(ii));
@@ -41,7 +41,6 @@ for i = 1:n_steps
         
         inds_da=(2:11)+(i-1)*step_size;
         inds_th=(2:11)+(j-1)*step_size;
-        inds_el=2;
         
         DA_triggers(:)=0;
         DA_triggers(inds_da)=1;
